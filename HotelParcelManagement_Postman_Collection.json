@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "b21bceb6-e8ba-4b58-b4ce-b0aefeaeb03f",
+		"name": "HotelParcelManagementPostManRequest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hotel",
+			"item": [
+				{
+					"name": "create guest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"serkan sunel\",\n  \"email\": \"serkan.sunel@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/guest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create room 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"doorNumber\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create room 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"doorNumber\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create room 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"doorNumber\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"guestId\": 1,\n  \"roomId\": 2,\n  \"dateOut\": \"2021-02-16 15:25:26\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept parcel BOX for guest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"guestId\": 1,\n  \"parcelDescription\":\"a small box with a special note to Mr. Smith with barcode: 12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept parcel LETTER for guest Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"guestId\": 1,\n  \"parcelDescription\":\"a letter to Mr. Smith from Mrs. Scarlet\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deliver BOX parcel to guest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "end a reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept parcel for guest - should fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"guestId\": 1,\n  \"parcelDescription\":\"a small box with a special note to Mr. Smith with barcode: 54321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get guest - check parcels waiting etc",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/guest/email/serkan.sunel@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest",
+								"email",
+								"serkan.sunel@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get parcels with details of guest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.fullname).to.eql('serkan sunel');",
+									"    pm.expect(responseJson.email).to.eql('serkan.sunel@gmail.com');",
+									"    pm.expect(responseJson.mobile).to.eql('905425619284');",
+									"//    pm.expect(responseJson.address).to.have.lengthOf(1);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwe123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcel/guestid/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel",
+								"guestid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
