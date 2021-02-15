@@ -1,4 +1,5 @@
 #DEMO APPLICATION FOR HRS ASSESSMENT
+
 Problem Statement : Receptionists have to accomplish various tasks throughout the day when operating a hotel. One of those tasks is to accept parcels for guests.
 
 * It happens, that receptionists accept parcels for guests, that was already checked out of the hotel.
