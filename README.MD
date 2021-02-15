@@ -11,7 +11,9 @@ Requirements
 
 
 #How to compile & test & build & dockerize project
-**mvn clean package**
+git clone https://github.com/sunels/hrsdemo.git
+mvn clean package
+java -jar /home/sunels/Downloads/hrsdemo/target/demov1-0.0.1-SNAPSHOT.jar
 
 
 #How to Test with Postman
