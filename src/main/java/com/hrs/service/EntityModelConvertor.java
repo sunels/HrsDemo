@@ -25,7 +25,6 @@ public class EntityModelConvertor {
     private final ReservationRepository reservationRepository;
     private final GuestRepository guestRepository;
     private final RoomRepository roomRepository;
-
     private final ParcelRepository parcelRepository;
 
     public EntityModelConvertor(ReservationRepository reservationRepository, GuestRepository guestRepository,

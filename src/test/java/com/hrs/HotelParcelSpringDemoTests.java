@@ -61,10 +61,6 @@ class HotelParcelSpringDemoTests {
     @Autowired
     private ReservationRepository reservationRepository;
 
-    @Before
-    public void setup() {
-        RestAssured.baseURI = "http://localhost:8080/";
-    }
 
     @Test
     void contextLoads() {
@@ -130,32 +126,6 @@ class HotelParcelSpringDemoTests {
         endAReservation();
         rejectAParcelAsLetterForGuest();
     }
-
-    @Test
-    public void whenAddGuest_thenSuccess() {
-        GuestModel guest = new GuestModel();
-        guest.setFullName("serkan sunel");
-        guest.setEmail("serkan.sunel@gmail.com");
-
-        // Serialize the guest object into JSON
-        ObjectMapper objectMapper = new ObjectMapper();
-        String requestBody = null;
-        try {
-            requestBody = objectMapper.writeValueAsString(guest);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-        // Send the request with the serialized JSON body
-        given()
-                .contentType(ContentType.JSON) // Set content type to JSON
-                .body(requestBody) // Set the JSON request body
-                .when()
-                .request("POST", "/guest")
-                .then()
-                .statusCode(200);
-    }
-
 
     private void defineNewGuest() throws Exception {
         GuestModel guestModel = new GuestModel();

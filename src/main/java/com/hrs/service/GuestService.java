@@ -4,6 +4,7 @@ import com.hrs.jpa.GuestEntity;
 import com.hrs.jpa.repository.GuestRepository;
 import com.hrs.model.GuestModel;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -12,8 +13,10 @@ import javax.transaction.Transactional;
 @Service
 @Slf4j
 public class GuestService {
-    private final GuestRepository guestRepository;
-    private final EntityModelConvertor convertor;
+    GuestRepository guestRepository;
+    EntityModelConvertor convertor;
+
+    @Autowired
     public GuestService(GuestRepository guestRepository, EntityModelConvertor convertor) {
         this.guestRepository = guestRepository;
         this.convertor = convertor;
@@ -32,6 +35,6 @@ public class GuestService {
     public GuestModel findByEmail(String email) {
         return guestRepository.findByEmail(email)
                 .map(e-> convertor.convertGuestEntity2Model(e))
-                .orElseThrow(()-> new EntityNotFoundException ("No guest found by email" + email));
+                .orElseThrow(()-> new EntityNotFoundException ("No guest found by email: " + email));
     }
 }
