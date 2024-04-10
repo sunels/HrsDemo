@@ -31,7 +31,7 @@ public class RoomService {
     @Transactional
     public RoomModel findByDoorNumber(Integer doorNumber) {
         return roomRepository.findByDoorNumber(doorNumber)
-                .map(e-> convertor.convertRoomEntity2Model(e))
+                .map(convertor::convertRoomEntity2Model)
                 .orElseThrow(() -> new EntityNotFoundException("No room by door number" + doorNumber));
     }
 

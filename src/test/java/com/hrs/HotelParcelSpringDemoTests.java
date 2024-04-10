@@ -1,5 +1,6 @@
 package com.hrs;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hrs.jpa.GuestEntity;
 import com.hrs.jpa.ParcelEntity;
@@ -13,6 +14,9 @@ import com.hrs.model.GuestModel;
 import com.hrs.model.ParcelModel;
 import com.hrs.model.ReservationModel;
 import com.hrs.model.RoomModel;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -26,6 +30,7 @@ import java.time.Instant;
 import java.util.Optional;
 import java.util.Set;
 
+import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -55,6 +60,11 @@ class HotelParcelSpringDemoTests {
 
     @Autowired
     private ReservationRepository reservationRepository;
+
+    @Before
+    public void setup() {
+        RestAssured.baseURI = "http://localhost:8080/";
+    }
 
     @Test
     void contextLoads() {
@@ -120,6 +130,32 @@ class HotelParcelSpringDemoTests {
         endAReservation();
         rejectAParcelAsLetterForGuest();
     }
+
+    @Test
+    public void whenAddGuest_thenSuccess() {
+        GuestModel guest = new GuestModel();
+        guest.setFullName("serkan sunel");
+        guest.setEmail("serkan.sunel@gmail.com");
+
+        // Serialize the guest object into JSON
+        ObjectMapper objectMapper = new ObjectMapper();
+        String requestBody = null;
+        try {
+            requestBody = objectMapper.writeValueAsString(guest);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        // Send the request with the serialized JSON body
+        given()
+                .contentType(ContentType.JSON) // Set content type to JSON
+                .body(requestBody) // Set the JSON request body
+                .when()
+                .request("POST", "/guest")
+                .then()
+                .statusCode(200);
+    }
+
 
     private void defineNewGuest() throws Exception {
         GuestModel guestModel = new GuestModel();
