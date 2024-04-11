@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Build Docker Image
+        run: docker build -t hrs-demo .
+
+      - name: Run JUnit Tests with Maven
+        run: mvn test
+
+      - name: TAG Docker Image
+        run: docker tag hrs-demo:latest sunels/restfull-jpa-demo:latest
+
+      - name: Push Docker Image
+        run: docker push sunels/restfull-jpa-demo:latest
+
+      # Add deployment steps here

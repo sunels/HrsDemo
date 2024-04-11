@@ -51,3 +51,11 @@ use test10;
 
 Keep it mind that application is configured in create-drop semantic in resources/application.yml
 
+# UPLOAD DOCKER to DOCKER-HUB 
+Create a docker registry in dockerhub exm: sunels/restfull-jpa-demo
+In the terminal window
+
+docker tag demov1:0.0.1-SNAPSHOT--240411_0920 sunels/restfull-jpa-demo:latest
+docker push sunels/restfull-jpa-demo:latest
+
+
