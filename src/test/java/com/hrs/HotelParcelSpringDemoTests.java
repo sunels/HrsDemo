@@ -1,6 +1,5 @@
 package com.hrs;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hrs.jpa.GuestEntity;
 import com.hrs.jpa.ParcelEntity;
@@ -14,9 +13,6 @@ import com.hrs.model.GuestModel;
 import com.hrs.model.ParcelModel;
 import com.hrs.model.ReservationModel;
 import com.hrs.model.RoomModel;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,7 +26,6 @@ import java.time.Instant;
 import java.util.Optional;
 import java.util.Set;
 
-import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
