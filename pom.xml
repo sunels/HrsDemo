@@ -18,7 +18,7 @@
         <java.version>17</java.version>
         <maven.build.timestamp.format>yyMMdd_HHmm</maven.build.timestamp.format>
         <buildNumber>${maven.build.timestamp}</buildNumber>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
     </properties>
 
     <dependencies>
